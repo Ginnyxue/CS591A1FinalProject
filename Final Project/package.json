@@ -30,6 +30,7 @@
     "request": "^2.69.0",
     "serve-favicon": "~2.3.0",
     "wunderground": "0.0.0",
-    "wunderground-api": "^1.1.4"
+    "wunderground-api": "^1.1.4",
+    "youtube-api": "^2.0.8"
   }
 }

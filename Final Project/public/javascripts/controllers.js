@@ -180,14 +180,29 @@ angular.module('cs411', ['ngRoute', 'ngCookies'])
             $http.get('http://localhost:3000/wunderground/' + input)
                 .then(function(response){
                     $scope.result = response.data
+                    $scope.wiki_info = " "
+                    $scope.info = " "
                 })
         }
 
         $scope.showSchool = function(input){
             $http.get('http://localhost:3000/college/' + input)
                 .then(function(response){
-                    $scope.info = response.data
+                    $scope.info = response.data[0]["web_page"]
+                    $scope.wiki_info = " "
+                    $scope.result = " "
 
+                })
+        }
+
+        $scope.searchWiki = function(input){
+
+            $http.get('http://localhost:3000/wiki/' + input)
+                .then(function(response){
+                    $scope.wiki_name  = response.data[0]
+                    $scope.wiki_info = response.data[2][0] + response.data[2][1]
+                    $scope.info = " "
+                    $scope.result = " "
                 })
         }
 

@@ -24,6 +24,17 @@
     <!-- Local styles -->
     <link rel="stylesheet" href="stylesheets/style.css">
 
+    <style type="text/css">
+        
+        body {
+            background: url("/images/night.jpg");
+            background-size: 100%;
+            background-repeat: no-repeat;
+        }
+
+
+    </style>
+
 </head>
 
 <body ng-app="cs411">
@@ -31,7 +42,11 @@
 
 <div ng-controller="cs411ctrl" ng-init="initApp()">
     <!-- <img src="/images/master-logo.gif"><span class="largeText">  Department of Computer Science</span> -->
-    <h2>Seach Your Ideal College</h2>
+    <h2><font color="black">&nbsp;&nbsp;&nbsp;&nbsp;Add Your Ideal College</h2>
+
+    <!-- <div style='position:absolute;z-index:0;left:0;top:0;width:100%;height:100%'>
+  <img src='/images/bu-campus40.jpg' style='width:100%;height:100%' />
+</div> -->
 
     <div>
         <form class="form-inline" name="inputForm">
@@ -49,7 +64,7 @@
                        ng-model="department">
                 <input type="hidden" value="{{user._id}}">
             </div>
-            <button type="submit" class="btn btn-primary" ng-disabled="inputForm.$invalid" ng-click="createUser()">
+            <button type="submit" class="btn btn-default" ng-disabled="inputForm.$invalid" ng-click="createUser()">
                 Add to My List
             </button>
         </form>
@@ -79,20 +94,35 @@
                 <button class="btn btn-sm pull-right btn-danger" ng-click="deleteUser(user._id);">
                     <span class="glyphicon glyphicon-trash"></span>
                 </button>
+                <button class="btn btn-sm pull-right btn-danger" ng-click="searchWiki(user.name);">
+                    Wiki
+                </button>
                 <button class="btn btn-sm pull-right btn-info" ng-click="showWeather(user.UID);">
                     Weather</span>
                 </button>
                 <button class="btn btn-sm pull-right btn-success" type="hidden" ng-click="showSchool(user.name);">
                     Website</span>
                 </button>
+                
                 <button class="btn btn-sm pull-right btn-warning" ng-click="setUserUpdate(user);">
                     Update
                 </button>
+                
             </li>
         </ul>
-        <p>{{info[0]["web_page"]}}</p>
+
+
+        <p>{{info}}</p>
         <p>{{result}}</p>
-        <!-- <p>{{info["name"]}}</p> -->
+        <p>{{wiki_info}}</p>
+
+        <!-- <ul>
+        <li>{{info}}</li>
+        <li>{{result}}</li>
+        <li>{{wiki_info}}</li>
+        
+
+        </ul> -->
 
     </div>
 </div>

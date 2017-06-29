@@ -21,6 +21,7 @@ const api = require('./routes/api')
 const auth = require('./routes/authTwitter')
 const wunderground = require('./routes/wunderground')
 const college = require('./routes/college')
+const wiki = require('./routes/wiki')
 
 
 const app = express()
@@ -48,6 +49,7 @@ app.use('/api', api);
 app.use('/auth', auth);
 app.use('/wunderground', wunderground);
 app.use('/college', college);
+app.use('/wiki', wiki);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

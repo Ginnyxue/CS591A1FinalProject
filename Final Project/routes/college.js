@@ -9,7 +9,7 @@ router.get('/:name', function (req, res, next) {
     // let location = req.params.location;
     var request = require('request');
     var options = { method:'GET',
-        url: 'http://universities.hipolabs.com/search?country=United%20States&name=',
+        url: 'http://universities.hipolabs.com/search?country=United%20States&name=' + str,
         qs: {name: str}
     };
 

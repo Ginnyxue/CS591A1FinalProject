@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
 
-const placeConfig = require('../config/place')
+// const collegeConfig = require('../config/college')
 
 
 router.get('/:name', function (req, res, next) {
@@ -9,7 +9,9 @@ router.get('/:name', function (req, res, next) {
     // let location = req.params.location;
     var request = require('request');
     var options = { method:'GET',
-        url: 'https://maps.googleapis.com/maps/api/place/textsearch/xml?query='+place+'in+'city'&key=YOUR_API_KEY',
+        url: 'https://en.wikipedia.org/w/api.php?action=opensearch&search=' + str,
+        // url: 'https://wikipedia.org/w/api.php?action=opensearch&format=json&callback=?&search=',
+        // url: 'https://en.wikipedia.org/w/api.php?action=query&prop=revisions&rvprop=content&rvsection=0&titles=',
         qs: {name: str}
     };
 
